@@ -23,6 +23,13 @@ class Store{
     this.records.splice(position,1);
   }
 
+  sellRecord(record){
+    if(this.findRecordByTitle(record.title)){
+      this.removeRecord(record);
+      this.addFunds(record.price);
+    }
+  }
+
 
 }
 

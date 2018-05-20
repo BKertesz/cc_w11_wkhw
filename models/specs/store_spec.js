@@ -46,12 +46,19 @@ describe('Store',function(){
 
   it('should be able to remove a record from its stock',function(){
     store.addRecord(record);
-    store.removeRecord(findRecordByTitle('Their Greatest Hits 1971 - 1975'));
+    store.removeRecord(record);
     const actual = store.records.length;
     assert.deepStrictEqual(actual,0);
   });
 
-  it('should be able to sell a record if it has the record');
+  it('should be able to sell a record if it has the record',function(){
+    store.addRecord(record);
+    store.sellRecord(record);
+    const actual = store.records.length;
+    const actual2 = store.funds;
+    assert.deepStrictEqual(actual,0);
+    assert.deepStrictEqual(actual2,1000);
+  });
 
 })
 // EOF
